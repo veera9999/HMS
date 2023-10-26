@@ -63,21 +63,18 @@ class Appointments {
         return appointmentList;
     }
 
-    public static  Appointment getAppointment(int appointmentID)
-    {
-        Appointment app=null;
-        for(Appointment App: appointmentList)
-        {
-            if(appointmentID == app.AppointmentID)
-            {
-                app=App;
-                System.out.println(app.getPatient().getName());
+    public static Appointment getAppointment(int appointmentID) {
+        Appointment foundAppointment = null;
+
+        for (Appointment app : appointmentList) {
+            if (appointmentID == app.getAppointmentID()) {
+                foundAppointment = app;
+                //System.out.println(foundAppointment.getPatient().getName());
+                break;  // Assuming you want to exit the loop after finding the matching appointment
             }
         }
-        if(app==null)
-        return null;
-        else
-            return app;
+
+        return foundAppointment;
     }
 
 }

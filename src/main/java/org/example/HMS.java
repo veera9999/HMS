@@ -136,10 +136,11 @@ public class HMS {
         // Print the appointments
         System.out.println("Appointments:");
         for (Appointment appointment : appointmentList) {
-
-            System.out.println("patient: " + appointment.getPatient().getName());
-            System.out.println("Date and Time: " + appointment.getTimeSlot().getStartTime());
             System.out.println("AppointmentID: "+appointment.getAppointmentID());
+            System.out.println("patient: " + appointment.getPatient().getName());
+            System.out.println("Doctor: "+appointment.getDoctor().getName());
+            System.out.println("Date and Time: " + appointment.getTimeSlot().getStartTime());
+
         }
 		
 	}
@@ -355,6 +356,7 @@ public class HMS {
             System.out.println("Invalid AppointmentID");
         else {
             System.out.println("*************************************Billing Information********************************************************");
+            System.out.println("AppointmentID: "+app.getAppointmentID());
             System.out.println("Patient - ID: " + app.getPatient().getID());
             System.out.println("Patient Name: " + app.getPatient().getName());
             System.out.println("Patient Age: " + app.getPatient().getAge());
